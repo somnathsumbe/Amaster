@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="register" (submit)="ragisterUser()">
+        <div class="card">
+          <div class="card-header text-center bg-dark text-white">Register User</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
+                  formControlName="name">
+              </div>
+              <div class="col-md-4">
+                <input type="password" class="form-control" placeholder="Enter password" name="password"
+                  formControlName="password">
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-check-inline" *ngFor="let languages of languages; let i = index" formArrayName="lang">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="{{languages}}" formControlName="{{i}}">{{languages}}
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-check-inline" *ngFor="let genderList of genderLists">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" formControlName="gender" name="gender"
+                      value="{{genderList}}">{{genderList}}
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="sel1">Select City</label>
+                  <select class="form-control" id="city" name="city" formControlName="city">
+                    <option *ngFor="let cityname of citys" value="{{cityname}}">{{cityname}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-4">
+                  <label for="sel2">interests</label>
+                  <select multiple class="form-control" id="interests" name="interests" formControlName="interest">
+                    <option *ngFor="let fev of interests" value="{{fev}}">{{fev}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="5" id="Comment" name="Comment"
+                    formControlName="Comment"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
