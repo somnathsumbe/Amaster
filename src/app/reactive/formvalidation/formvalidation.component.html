@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-dark text-center text-white">Validation</div>
+                <div class="card-body">
+                    <!-- class="was-validated" -->
+                    <form [formGroup]="validation"  (submit)="validationForm()">
+                        <div class="form-group">
+                          <label for="uname">Username:</label>
+                          <input type="text" class="form-control" id="name" placeholder="Enter username" name="name" formControlName="name">
+                    
+                          <div class="text-danger" *ngIf="validation.controls['name'].invalid && validation.controls['name'].touched">
+                              <div *ngIf="validation.controls['name'].hasError('required')">
+                                Name is required!
+                              </div>
+
+
+                              <div *ngIf="validation.controls['name'].hasError('minlength')">
+                                Min length Should be 3 char !
+                              </div>
+
+                              <div *ngIf="validation.controls['name'].hasError('maxlength')">
+                                Max length Should be 10 char !
+                              </div>
+                              
+                              <div *ngIf="validation.controls['name'].hasError('validOnlyCharField')">
+                                Only Char Fields allowed !
+                              </div>
+
+                              
+                          </div> 
+
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd"  formControlName="pswd">
+                          <div class="text-danger" *ngIf="validation.controls['pswd'].invalid && validation.controls['pswd'].touched">
+                            <div *ngIf="validation.controls['pswd'].hasError('required')">
+                                Password is required!
+                            </div>
+                        </div> 
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label for="pwd">Confirm Password:</label>
+                            <input type="password" class="form-control" id="Confirm" placeholder="Enter Confirm password" name="Confirm"  formControlName="Confirm">
+                            <div class="text-danger" *ngIf="validation.controls['Confirm'].invalid && validation.controls['Confirm'].touched">
+                                <div *ngIf="validation.controls['Confirm'].hasError('required')">
+                                  Confirm is required!
+                                </div>
+  
+  
+
+                            </div>   
+                        </div> -->
+
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" formControlName="dob" class="form-control"  name="dob"/>
+                            <div class="text-danger" *ngIf="validation.controls['dob'].invalid && validation.controls['dob'].touched">
+                                <div *ngIf="validation.controls['dob'].hasError('required')">
+                                  dob is required!
+                                </div>
+  
+
+                            </div> 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
+                      
+                            <div class="text-danger" *ngIf="validation.controls['email'].invalid && validation.controls['email'].touched">
+                                <div *ngIf="validation.controls['email'].hasError('required')">
+                                  email is required!
+                                </div>
+  
+  
+                                <div *ngIf="validation.controls['email'].hasError('email')">
+                                  valid Email
+                                </div>
+                            </div> 
+  
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="mobile">Mobile:</label>
+                            <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" formControlName="mobile">
+                      
+                            <div class="text-danger" *ngIf="validation.controls['mobile'].invalid && validation.controls['mobile'].touched">
+                                <div *ngIf="validation.controls['mobile'].hasError('required')">
+                                  mobile is required!
+                                </div>
+  
+                                <div *ngIf="validation.controls['mobile'].hasError('minlength')">
+                                    Mobile should have min 10 Numaric number!
+                                  </div>
+
+                                  <div *ngIf="validation.controls['mobile'].hasError('minlength')">
+                                    Mobile should have max 10 Numaric number!
+                                  </div>
+                                <div *ngIf="validation.controls['mobile'].hasError('validNumericField')">
+                                  Only Number Allowed !
+                                </div>
+                            </div> 
+  
+                          </div>
+
+                        <button type="submit" class="btn btn-primary mb-5" [disabled]="validation.invalid">Submit</button>
+                      </form>
+
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

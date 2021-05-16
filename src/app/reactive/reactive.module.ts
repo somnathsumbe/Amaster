@@ -6,11 +6,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubjectComponent } from './subject/subject.component';
 import { Child1Component } from './subject/child1/child1.component';
 import { Child2Component } from './subject/child2/child2.component';
+import { FormvalidationComponent } from './formvalidation/formvalidation.component';
 
 
 
 @NgModule({
-  declarations: [RagisterComponent, SubjectComponent, Child1Component, Child2Component],
+  declarations: [RagisterComponent, SubjectComponent, Child1Component, Child2Component, FormvalidationComponent],
   imports: [
     CommonModule,
     ReactiveRoutingModule,
