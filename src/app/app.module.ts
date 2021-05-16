@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { Page404Component } from './page404/page404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveModule } from './reactive/reactive.module';
+
+
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { ReactiveModule } from './reactive/reactive.module';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log("main AppModule")
+  }
+}

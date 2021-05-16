@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ragister',
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@ang
   styleUrls: ['./ragister.component.css']
 })
 export class RagisterComponent implements OnInit {
-  register!: any;
+  register!: FormGroup;
   genderLists = ["Male", "Female", "Not Mantion"];
   languages = ["Marathi", "Hindi", "English"];
   citys = ["Pune", "Mumbai", "Nashik"]
