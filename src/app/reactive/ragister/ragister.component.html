@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
   <div class="row">
     <div class="col-md-12">
       <form [formGroup]="register" (submit)="ragisterUser()">
@@ -33,7 +33,14 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
+
+            </div>
+
+
+
+            <div class="row">
+
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="sel1">Select City</label>
                   <select class="form-control" id="city" name="city" formControlName="city">
@@ -41,27 +48,22 @@
                   </select>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-4">
-                  <label for="sel2">interests</label>
-                  <select multiple class="form-control" id="interests" name="interests" formControlName="interest">
-                    <option *ngFor="let fev of interests" value="{{fev}}">{{fev}}</option>
-                  </select>
-                </div>
+              <div class="col-md-4">
+                <label for="sel2">interests</label>
+                <select multiple class="form-control" id="interests" name="interests" formControlName="interest">
+                  <option *ngFor="let fev of interests" value="{{fev}}">{{fev}}</option>
+                </select>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="comment">Comment:</label>
-                  <textarea class="form-control" rows="5" id="Comment" name="Comment"
+                  <textarea class="form-control" rows="3" id="Comment" name="Comment"
                     formControlName="Comment"></textarea>
                 </div>
               </div>
+
             </div>
             <div class="row">
               <div class="col-md-12">
